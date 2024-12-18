@@ -14,7 +14,7 @@ function NoteForm() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:5000/api/notes/${id}`, {
+        .get(`https://notepad-fullstack.onrender.com/api/notes/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,9 +35,9 @@ function NoteForm() {
       };
 
       if (id) {
-        await axios.put(`http://localhost:5000/api/notes/${id}`, { title, content }, { headers });
+        await axios.put(`https://notepad-fullstack.onrender.com/api/notes/${id}`, { title, content }, { headers });
       } else {
-        await axios.post('http://localhost:5000/api/notes', { title, content }, { headers });
+        await axios.post('https://notepad-fullstack.onrender.com/api/notes', { title, content }, { headers });
       }
       navigate('/notelist');
     } catch (error) {
