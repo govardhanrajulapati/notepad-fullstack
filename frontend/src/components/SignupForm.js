@@ -11,7 +11,7 @@ function SignupForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/users/signup', { name, email, password });
+      await axios.post('https://notepad-fullstack.onrender.com/users/signup', { name, email, password });
       alert('Signup successful! Please log in.');
       navigate('/login');
     } catch (error) {
