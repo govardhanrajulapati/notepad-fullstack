@@ -13,7 +13,7 @@ function SignupForm() {
     try {
       await axios.post('https://notepad-fullstack.onrender.com/users/signup', { name, email, password });
       alert('Signup successful! Please log in.');
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       alert('Signup failed! Please try again.');
     }
