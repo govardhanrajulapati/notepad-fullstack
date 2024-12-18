@@ -1,0 +1,111 @@
+/* noteform.css */
+
+
+body{
+    background-color: black;
+}
+
+.note-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 2px solid #4d0099;
+    position: relative;
+  }
+  
+  .note-form-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff00c6, #00f2ea, #ff00c6, #00f2ea);
+    background-size: 300% 300%;
+    z-index: -1;
+    border-radius: 10px;
+    animation: glowing 10s ease infinite;
+  }
+  
+  @keyframes glowing {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .note-form-container h1 {
+    color: #00f2ea;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00f2ea;
+  }
+  
+  .note-form-container input[type='text'],
+  .note-form-container textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4d0099;
+    border-radius: 4px;
+    background-color: #262626;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+  }
+  
+  .note-form-container input[type='text']:focus,
+  .note-form-container textarea:focus {
+    border-color: #00f2ea;
+    outline: none;
+      box-shadow: 0 0 5px #00f2ea;
+  }
+  
+  
+  .note-form-container textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .note-form-container button {
+      display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #ff00c6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  
+  .note-form-container button:hover {
+      background-color: #b30086;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+  
+  .note-form-container button:active{
+      transform: scale(0.98);
+  }
+  
+  @media (max-width: 768px) {
+      .note-form-container{
+          margin: 10px;
+          padding: 15px;
+      }
+      .note-form-container input[type='text'],
+      .note-form-container textarea{
+          font-size: 0.9rem
+      }
+  
+      .note-form-container button{
+          font-size: 1rem;
+      }
+  }
