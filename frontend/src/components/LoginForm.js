@@ -15,7 +15,7 @@ function Login() {
   const handleInitialLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
+      const response = await axios.post('https://notepad-fullstack.onrender.com/api/users/login', {
         email,
         password,
       });
@@ -32,7 +32,7 @@ function Login() {
   const handleOTPVerification = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users/verify-otp', {
+      const response = await axios.post('https://notepad-fullstack.onrender.com/api/users/verify-otp', {
         email,
         otp,
         tempOTP,
