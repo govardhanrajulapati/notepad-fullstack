@@ -18,7 +18,7 @@ function NotesList() {
     if (!token) return;
 
     axios
-      .get('http://localhost:5000/api/notes', {
+      .get('https://notepad-fullstack.onrender.com/api/notes', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setNotes(response.data))
@@ -44,9 +44,9 @@ function NotesList() {
       const headers = { Authorization: `Bearer ${token}` };
       
       if (editingNoteId) {
-        await axios.put(`http://localhost:5000/api/notes/${editingNoteId}`, { title, content }, { headers });
+        await axios.put(`https://notepad-fullstack.onrender.com/api/notes/${editingNoteId}`, { title, content }, { headers });
       } else {
-        await axios.post('http://localhost:5000/api/notes', { title, content }, { headers });
+        await axios.post('https://notepad-fullstack.onrender.com/api/notes', { title, content }, { headers });
       }
       
       handleFormReset();
@@ -59,7 +59,7 @@ function NotesList() {
   const handleDelete = async (id) => {
     try {
       const headers = { Authorization: `Bearer ${token}` };
-      await axios.delete(`http://localhost:5000/api/notes/${id}`, { headers });
+      await axios.delete(`https://notepad-fullstack.onrender.com/api/notes/${id}`, { headers });
       setNotes(notes.filter((note) => note._id !== id));
     } catch (error) {
       console.error('Error deleting the note:', error);
